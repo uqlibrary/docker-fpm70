@@ -8,7 +8,7 @@ FROM uqlibrary/docker-base:3
 #    newrelic-php5 \
 #    newrelic-sysmond \
 
-RUN \
+RUN yum update -y && \
   yum install -y \
     php70u-common \
     php70u-fpm \
