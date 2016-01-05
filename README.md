@@ -1,4 +1,4 @@
-docker-fpm56
+docker-fpm70
 ============
 
 This repository contains a Dockerfile of PHP 7+ FPM for Docker's automated build published to the public [Docker Hub Registry](https://registry.hub.docker.com/).
