@@ -36,7 +36,7 @@ COPY etc/php.d/15-xdebug.ini /etc/opt/remi/php70/php.d/15-xdebug.ini
 
 RUN rm -f /etc/opt/remi/php70/php.d/20-mssql.ini && \
     rm -f /etc/opt/remi/php70/php.d/30-pdo_dblib.ini && \
-    sed -i "s/;date.timezone =.*/date.timezone = Australia\/Brisbane/" /etc/php.ini && \
+    sed -i "s/;date.timezone =.*/date.timezone = Australia\/Brisbane/" /etc/opt/remi/php70/php.ini && \
     sed -i "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/" /etc/opt/remi/php70/php.ini && \
     sed -i "s/display_errors =.*/display_errors = Off/" /etc/opt/remi/php70/php.ini && \
     sed -i "s/upload_max_filesize = 2M/upload_max_filesize = 30M/" /etc/opt/remi/php70/php.ini && \
