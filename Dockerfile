@@ -31,7 +31,7 @@ RUN yum update -y && \
     php70u-xmlrpc \
     php70u-mbstring \
     php70u-tidy \
-    git && \
+    git
 
 #xdebug that supports php7 (2.4) is only in RC for now, so you need to build it FTW
 RUN yum group install -y "Development Tools" && \
