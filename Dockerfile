@@ -48,4 +48,4 @@ EXPOSE 9000
 
 ENV NSS_SDB_USE_CACHE YES
 
-ENTRYPOINT ["/usr/sbin/php-fpm", "--nodaemonize"]​
+ENTRYPOINT ["/opt/remi/php70/root/usr/sbin/php-fpm", "--nodaemonize"]​
