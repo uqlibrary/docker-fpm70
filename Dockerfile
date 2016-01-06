@@ -42,7 +42,8 @@ RUN rm -f /etc/opt/remi/php70/php.d/20-mssql.ini && \
     sed -i "s/upload_max_filesize = 2M/upload_max_filesize = 30M/" /etc/opt/remi/php70/php.ini && \
     sed -i -e "s/;daemonize\s*=\s*yes/daemonize = no/g" /etc/opt/remi/php70/php-fpm.conf && \
     sed -i "s/error_log =.*/;error_log/" /etc/opt/remi/php70/php-fpm.conf && \
-    usermod -u 1000 nobody
+    usermod -u 1000 nobody && \
+    ln -s /opt/remi/php70/root/usr/sbin/php-fpm /usr/sbin/php-fpm
 
 EXPOSE 9000
 
