@@ -9,8 +9,11 @@ FROM uqlibrary/docker-base:3
 #    newrelic-sysmond \
 
 RUN yum update -y && \
+
   yum install -y \
     php70u-common \
+    php70u-cli \
+    php70u-devel \
     php70u-fpm \
     php70u-gd \
     php70u-imap \
@@ -29,7 +32,20 @@ RUN yum update -y && \
     php70u-mbstring \
     php70u-tidy \
     git && \
-  yum clean all
+
+#xdebug that supports php7 (2.4) is only in RC for now, so you need to build it FTW
+RUN yum group install -y "Development Tools" && \
+  cd /usr/local/src/ && \
+  wget -O /usr/local/src/xdebug-2.4.0rc3.tgz http://xdebug.org/files/xdebug-2.4.0rc3.tgz && \
+  tar -xvzf /usr/local/src/xdebug-2.4.0rc3.tgz && \
+  cd xdebug-2.4.0RC3 && \
+  phpize && \
+  ./configure && \
+  make && \
+  cp modules/xdebug.so /usr/lib64/php/modules && \
+  yum group remove -y "Development Tools" && \
+  yum autoremove -y && yum clean all
+
 
 COPY etc/php-fpm.d/www.conf /etc/php-fpm.d/www.conf
 COPY etc/php.d/15-xdebug.ini /etc/php.d/15-xdebug.ini
