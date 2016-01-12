@@ -1,4 +1,4 @@
-FROM uqlibrary/docker-base:3
+FROM uqlibrary/docker-base:4
 
 # Disable new relic until their php7 agent comes out, see:
 # https://discuss.newrelic.com/t/php-agent-and-php-7-0/27687/27
