@@ -43,7 +43,9 @@ RUN rm -f /etc/opt/remi/php70/php.d/20-mssql.ini && \
     sed -i -e "s/;daemonize\s*=\s*yes/daemonize = no/g" /etc/opt/remi/php70/php-fpm.conf && \
     sed -i "s/error_log =.*/;error_log/" /etc/opt/remi/php70/php-fpm.conf && \
     usermod -u 1000 nobody && \
-    ln -s /opt/remi/php70/root/usr/sbin/php-fpm /usr/sbin/php-fpm
+    ln -s /opt/remi/php70/root/usr/sbin/php-fpm /usr/sbin/php-fpm && \
+    ln -s /opt/remi/php70/php.ini /etc/php.ini && \
+    ln -s /opt/remi/php70/root/usr/sbin/php /usr/sbin/php
 
 EXPOSE 9000
 
