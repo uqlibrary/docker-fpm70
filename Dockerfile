@@ -28,7 +28,7 @@ RUN yum update -y && \
     php70-php-xmlrpc \
     php70-php-mbstring \
     php70-php-tidy \
-    git && \
+    git \
     which && \
   yum clean all
 
