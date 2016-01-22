@@ -29,6 +29,7 @@ RUN yum update -y && \
     php70-php-mbstring \
     php70-php-tidy \
     git && \
+    which && \
   yum clean all
 
 COPY etc/php-fpm.d/www.conf /etc/opt/remi/php70/php-fpm.d/www.conf
