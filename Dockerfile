@@ -26,7 +26,8 @@ RUN \
     php70u-xmlrpc \
     php70u-mbstring \
     php70u-tidy \
-    newrelic-php5\
+    php70u-cli \
+    newrelic-php5 \
     newrelic-sysmond \
     git && \
   yum clean all
