@@ -46,7 +46,7 @@ RUN rm -f /etc/opt/remi/php70/php.d/20-mssql.ini && \
     usermod -u 1000 nobody && \
     ln -s /opt/remi/php70/root/usr/sbin/php-fpm /usr/sbin/php-fpm && \
     ln -s /etc/opt/remi/php70/php.ini /etc/php.ini && \
-    ln -s /opt/remi/php70/root/bin/php /usr/sbin/php
+    ln -s /opt/remi/php70/root/bin/php /usr/bin/php
 
 EXPOSE 9000
 
