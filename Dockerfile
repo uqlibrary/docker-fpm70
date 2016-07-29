@@ -26,6 +26,7 @@ RUN yum update -y && \
     php70-php-xmlrpc \
     php70-php-mbstring \
     php70-php-tidy \
+    php70-php-opcache \
     git \
     newrelic-php5 \
     newrelic-sysmond \
