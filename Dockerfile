@@ -30,6 +30,7 @@ RUN yum update -y && \
     git \
     newrelic-php5 \
     newrelic-sysmond \
+    mysql \
     which && \
   yum clean all
 
