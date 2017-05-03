@@ -1,5 +1,7 @@
 FROM uqlibrary/docker-base:11
 
+ENV COMPOSER_VERSION=1.4.1
+
 RUN rpm -Uvh http://yum.newrelic.com/pub/newrelic/el5/x86_64/newrelic-repo-5-3.noarch.rpm
 
 #Enable the ius testing and disable mirrors to ensure getting latest, not an out of date mirror
@@ -48,11 +50,13 @@ RUN rm -f /etc/opt/remi/php70/php.d/20-mssql.ini && \
     usermod -u 1000 nobody && \
     ln -s /opt/remi/php70/root/usr/sbin/php-fpm /usr/sbin/php-fpm && \
     ln -s /etc/opt/remi/php70/php.ini /etc/php.ini && \
-    mkdir -p /etc/php.d && \
     mkdir -p /etc/php-fpm.d && \
     ln -s /etc/opt/remi/php70/php-fpm.d/www.conf /etc/php-fpm.d/www.conf && \
     ln -s /etc/opt/remi/php70/php.d /etc/php.d && \
-    ln -s /opt/remi/php70/root/bin/php /usr/bin/php
+    ln -s /opt/remi/php70/root/bin/php /usr/bin/php && \
+    # Composer
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer --version=${COMPOSER_VERSION} && \
+    composer global require "hirak/prestissimo:0.3.5" \
 
 EXPOSE 9000
 
