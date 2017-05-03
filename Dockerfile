@@ -1,4 +1,4 @@
-FROM uqlibrary/docker-base:11
+FROM uqlibrary/docker-base:12
 
 ENV COMPOSER_VERSION=1.4.1
 
