@@ -56,7 +56,7 @@ RUN rm -f /etc/opt/remi/php70/php.d/20-mssql.ini && \
     ln -s /opt/remi/php70/root/bin/php /usr/bin/php && \
     # Composer
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer --version=${COMPOSER_VERSION} && \
-    composer global require "hirak/prestissimo:0.3.5" \
+    composer global require "hirak/prestissimo:0.3.5"
 
 EXPOSE 9000
 
